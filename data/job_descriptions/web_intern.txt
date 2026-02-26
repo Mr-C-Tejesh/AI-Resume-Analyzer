@@ -1,0 +1,7 @@
+Frontend Developer Intern
+
+Requirements:
+- HTML, CSS, JavaScript
+- React
+- API basics
+- Git

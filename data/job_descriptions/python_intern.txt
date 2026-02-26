@@ -1,0 +1,8 @@
+Python Developer Intern
+
+Requirements:
+- Python programming
+- Pandas, NumPy
+- Basic Machine Learning
+- Git
+- Problem solving skills
