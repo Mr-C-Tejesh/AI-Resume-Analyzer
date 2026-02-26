@@ -188,3 +188,4 @@ zope.hookable==8.1
 zope.interface==8.1
 zope.lifecycleevent==6.0
 zope.proxy==7.0
+python-docx==1.2.0
