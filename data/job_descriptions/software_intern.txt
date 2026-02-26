@@ -1,0 +1,31 @@
+Software Developer Intern
+
+We are looking for a motivated Software Developer Intern to join our engineering team. The candidate should have a strong foundation in programming and problem-solving.
+
+Responsibilities:
+
+* Write clean and efficient code
+* Assist in developing and testing software applications
+* Debug and fix issues in existing code
+* Work with the team on feature development
+* Participate in code reviews
+
+Requirements:
+
+* Knowledge of Python or Java or C++
+* Understanding of Data Structures and Algorithms
+* Basic knowledge of Object-Oriented Programming (OOP)
+* Familiarity with Git and version control
+* Basic understanding of databases (SQL)
+* Good problem-solving skills
+
+Preferred Skills:
+
+* Knowledge of web development (HTML, CSS, JavaScript)
+* Familiarity with frameworks like Flask, Django, or Node.js
+* Understanding of REST APIs
+* Linux basics
+
+Education:
+
+* Pursuing B.Tech/B.E. in Computer Science or related field

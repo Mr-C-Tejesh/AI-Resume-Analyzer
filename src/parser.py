@@ -151,12 +151,14 @@ def extract_skills(skills_text):
     # Convert doc back to text (cleaned by spaCy)
     processed_text = doc.text
 
-    matched_skills = []
-
+    matched = set()
     for category, skills in skill_dict.items():
         for skill in skills:
-            if skill in processed_text:
-                matched_skills.append(skill)
+            # match whole word/phrase only – prevents 'java' matching inside
+            # 'javascript', 'r' inside 'react', etc.
+            pattern = r'\b' + re.escape(skill.lower()) + r'\b'
+            if re.search(pattern, processed_text):
+                matched.add(skill)
 
-    # remove duplicates
-    return list(set(matched_skills))
+    # return a sorted list
+    return sorted(matched)
