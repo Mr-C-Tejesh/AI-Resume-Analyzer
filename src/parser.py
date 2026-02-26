@@ -162,3 +162,23 @@ def extract_skills(skills_text):
 
     # return a sorted list
     return sorted(matched)
+
+def extract_experience_years(text):
+    """
+        Extract the maximum years of experience from text.
+        Looks for patterns like "2 years", "3+ years", "1.5 years", "5 yrs".
+        Returns the maximum value found, or 0 if none found."""
+    
+    if not text:
+        return 0
+        
+    # Pattern to match: number (with optional +) followed by year/years/yrs
+    pattern = r'(\d+\.?\d*)\s*\+?\s*(?:year|years|yrs)'
+    matches = re.findall(pattern, text.lower())
+        
+    if not matches:
+       return 0
+        
+    # Convert to float and return maximum
+    years = [float(match) for match in matches]
+    return int(max(years))

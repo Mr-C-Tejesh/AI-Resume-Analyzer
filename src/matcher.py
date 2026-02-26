@@ -22,29 +22,30 @@ def calculate_similarity(resume_text, jd_text):
     
     return score
 
-def calculate_final_score(resume_text, jd_text, resume_skills, jd_skills):
-    """
-    Calculate final match score between resume and job description based on skills and text similarity.
-    
-    Args:
-        resume_text (str): Full resume text
-        jd_text (str): Full job description text
-        resume_skills (list): Skills extracted from resume
-        jd_skills (list): Skills extracted from job description
-    Returns:
-        tuple: (final_score, skill_score, text_similarity)
-    """
+def calculate_experience_score(resume_years, jd_years):
+
+    if resume_years == 0 and jd_years > 0:
+        return 0
+    elif resume_years >= jd_years:
+        return 100
+    else:
+        return (resume_years / jd_years) * 100
+
+def calculate_final_score(resume_text, jd_text, resume_skills, jd_skills, resume_years, jd_years):
+
     # Step 1: Calculate skill score
     matched_skills = set(resume_skills) & set(jd_skills)  # intersection
     skill_score = (len(matched_skills) / len(jd_skills)) * 100 if jd_skills else 0
 
-    # Step 2: Calculate text similarity
+    # Step 2: Get experience score
+    experience_score = calculate_experience_score(resume_years, jd_years)
+
+    # Step 3: Calculate text similarity
     text_similarity = calculate_similarity(resume_text, jd_text)
 
-    # Step 3: Calculate final score
-    final_score = (0.7 * skill_score) + (0.3 * text_similarity)
-
-    return final_score, skill_score, text_similarity
+    # Step 4: Calculate final score
+    final_score = (0.7 * skill_score) + (0.2 * experience_score) + (0.1 * text_similarity)
+    return final_score, skill_score, experience_score, text_similarity
 
 def get_missing_skills(resume_skills, jd_skills):
     """
