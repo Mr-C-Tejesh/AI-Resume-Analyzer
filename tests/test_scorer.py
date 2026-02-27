@@ -5,7 +5,7 @@ from src import matcher
 from src import scorer
 
 resume_path = "data/sample_resumes/software_engineer.pdf"
-jd_path = "data/job_descriptions/software_intern.txt"
+jd_path = "data/job_descriptions/web_intern.txt"
 
 resume_text = text_extraction.extract_resume_text(resume_path)
 parsed_data = parser.parse_resume(resume_text)
