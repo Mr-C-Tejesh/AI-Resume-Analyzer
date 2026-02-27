@@ -4,8 +4,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-PROJECT_ROOT = "/Users/tejesh/Coding/Projects/AI-Resume-Analyzer"
-sys.path.append(PROJECT_ROOT)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src import text_extraction
 from src import jd_processor
