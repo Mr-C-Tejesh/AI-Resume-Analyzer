@@ -27,9 +27,16 @@ resume_file = st.file_uploader("Upload your resume (PDF or DOCX)", type=["pdf", 
 
 resume_path = None
 if resume_file:
-    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".pdf")
-    temp_file.write(resume_file.getbuffer())
-    resume_path = temp_file.name
+    import tempfile
+    import os
+
+    # Get file extension (.pdf or .docx)
+    file_extension = os.path.splitext(resume_file.name)[1]
+
+    with tempfile.NamedTemporaryFile(delete=False, suffix=file_extension) as tmp_file:
+        tmp_file.write(resume_file.getbuffer())
+        resume_path = tmp_file.name
+
     st.success(f"Resume uploaded: {resume_file.name}")
 
 st.divider()
