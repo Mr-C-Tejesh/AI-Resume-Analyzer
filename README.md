@@ -1,51 +1,41 @@
-# AI Resume Analyzer (NLP)
+# AI Resume Analyzer
 
-An AI-powered web application that analyzes resumes against job descriptions and provides a match score along with improvement suggestions.
+An NLP-powered web app that scores resumes against job descriptions and suggests improvements.
 
-## Live Demo
+**Live Demo:** https://ai-resume-analyzer-sp7bqre3htdhzjq6u66psd.streamlit.app/
 
-https://ai-resume-analyzer-sp7bqre3htdhzjq6u66psd.streamlit.app/
+---
 
 ## Features
 
-* Upload Resume (PDF / DOCX)
-* Paste Job Description
-* Extracts:
-
-  * Skills
-  * Experience (years)
-* Calculates Match Score using:
-
-  * Skill Matching
-  * Experience Matching
-  * NLP-based Text Similarity
-* Identifies Missing Skills
-* Provides Resume Improvement Suggestions
+- Upload resume in PDF or DOCX format
+- Paste any job description
+- Extracts skills and years of experience
+- Calculates match score using skill matching, experience matching, and TF-IDF text similarity
+- Identifies missing skills
+- Provides actionable resume improvement suggestions
 
 ## Tech Stack
 
-* Python
-* NLP: spaCy
-* Text Similarity: TF-IDF (scikit-learn)
-* Streamlit (UI & Deployment)
+- **Language:** Python
+- **NLP:** spaCy
+- **Text Similarity:** TF-IDF (scikit-learn)
+- **UI & Deployment:** Streamlit
 
-## Project Structure
+## Screenshots
 
+<img width="1832" height="901" alt="image" src="https://github.com/user-attachments/assets/37f09cca-7c72-4803-8687-7b9a1559726e" />
+
+<img width="1275" height="925" alt="image" src="https://github.com/user-attachments/assets/5c544a5e-a6c6-4190-a666-8c009533aec1" />
+
+## Getting Started
+```bash
+git clone https://github.com/Mr-C-Tejesh/AI-Resume-Analyzer
+cd AI-Resume-Analyzer
+pip install -r requirements.txt
+streamlit run app/main.py
 ```
-app/        -> Streamlit UI  
-src/        -> Core logic (parser, matcher, scorer)  
-```
 
-## How It Works
+---
 
-1. Extract text from resume
-2. Parse skills and experience
-3. Extract requirements from Job Description
-4. Calculate weighted match score
-5. Display missing skills and suggestions
-
-## Future Improvements
-
-* Semantic matching using Sentence Transformers
-* Multiple resume ranking
-* ATS-style resume feedback
+Built by [Tejesh C](mailto:tejeshc17@gmail.com)
